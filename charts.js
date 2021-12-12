@@ -80,18 +80,17 @@ function buildCharts(sample) {
     // 8. Create the trace for the bar chart. 
     var barData = [{
       type: 'bar',
-      x: values.slice(0,10),
-      y: ids.slice(0,10).reverse(),
-      text: ids.slice(0,10).reverse(),
-      Orientation: 'h'
+      x: sample_values.slice(0,10),
+      y: otu_ids.slice(0,10).reverse(),
+      text: otu_labels.slice(0,10).reverse()
     }];
     console.log(yticks);
-    console.log(values.slice(0,10));
+    console.log(sample_values.slice(0,10));
     console.log(barData);
     // 9. Create the layout for the bar chart. 
     var barLayout = {
       title: "Top 10 Bacteria Cultures Found"
-     
+       
     };
     // 10. Use Plotly to plot the data with the layout. 
     Plotly.newPlot('bar-plot', barData, barLayout);  
