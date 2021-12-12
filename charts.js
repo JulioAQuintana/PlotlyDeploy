@@ -78,22 +78,25 @@ function buildCharts(sample) {
     var yticks = otu_ids.slice(0,10).map(otuID => 'OTU ${otuID}').reverse();
 
     // 8. Create the trace for the bar chart. 
-    var barData = [{
-      type: 'bar',
-      x: sample_values.slice(0,10),
-      y: otu_ids.slice(0,10).reverse(),
-      text: otu_labels.slice(0,10).reverse(),
-      orientation: "h"
-    }];
+    var barData = [
+      {
+        y: yticks,
+        x: sample_values.slice(0, 10).reverse(),
+        text: otu_labels.slice(0, 10).reverse(),
+        type: "bar",
+        orientation: "h"
+      }
+    ];
     console.log(yticks);
     console.log(sample_values.slice(0,10));
     console.log(barData);
     // 9. Create the layout for the bar chart. 
     var barLayout = {
-      title: "Top 10 Bacteria Cultures Found"
+      title: "Top 10 Bacteria Cultures Found",
+      margin: { t: 30, l: 150 }
        
     };
     // 10. Use Plotly to plot the data with the layout. 
-    Plotly.newPlot('bar-plot', barData, barLayout);  
+    Plotly.newPlot('bar', barData, barLayout);  
   });
 }
