@@ -82,7 +82,8 @@ function buildCharts(sample) {
       type: 'bar',
       x: sample_values.slice(0,10),
       y: otu_ids.slice(0,10).reverse(),
-      text: otu_labels.slice(0,10).reverse()
+      text: otu_labels.slice(0,10).reverse(),
+      orientation: "h"
     }];
     console.log(yticks);
     console.log(sample_values.slice(0,10));
