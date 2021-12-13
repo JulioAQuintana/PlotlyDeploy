@@ -1,0 +1,16 @@
+body {
+
+    color: #2f302f;
+  }
+
+  .tag {
+    font-family: "Gill Sans", sans-serif; 
+    font-size: 2rem;
+   }  
+
+
+  .jumbotron {
+    background-image: url("../images/bacteria.jpg");
+    background-size: 100% 100%;
+    text-align: center;
+  }
